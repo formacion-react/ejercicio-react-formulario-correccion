@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Container } from "react-bootstrap";
 import { Paso1 } from "./componentes/Paso1";
 import { Paso2 } from "./componentes/Paso2";
 import { Paso3 } from "./componentes/Paso3";
@@ -35,7 +36,7 @@ function App() {
     setPaso(paso - 1);
   };
   return (
-    <div className="container">
+    <Container>
       <NavegacionContext.Provider value={{ avanzar, retroceder }}>
         <DatosContext.Provider
           value={{
@@ -53,7 +54,7 @@ function App() {
           {paso === 4 && <Resumen />}
         </DatosContext.Provider>
       </NavegacionContext.Provider>
-    </div>
+    </Container>
   );
 }
 
